@@ -7,7 +7,7 @@ body {
     color: white;
 }
 :root {
-    /* Define colors using CSS Variables */
+    /* Define colors using CSS Variable */
     --color-dark-bg: #000;
     --color-light-text: #fff;
     --color-subtle-text: rgba(255, 255, 255, 0.8);
