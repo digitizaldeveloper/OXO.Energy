@@ -1,0 +1,486 @@
+/* Base Styling */
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(to bottom right, #000, #111);
+    color: white;
+}
+:root {
+    /* Define colors using CSS Variables */
+    --color-dark-bg: #000;
+    --color-light-text: #fff;
+    --color-subtle-text: rgba(255, 255, 255, 0.8);
+    --color-primary-btn: #fff;
+    --color-primary-btn-text: #000;
+    --color-secondary-btn-border: #fff;
+    --color-dark-bg: #111; /* Slightly less black than the previous section, as per image */
+    --color-light-text: #fff;
+    --color-main-brand: #fff; /* For the large brand name */
+    --color-subtle-text: rgba(255, 255, 255, 0.9);
+    --color-card-bg: #1c1c1c; 
+    --color-card-title: #fff;
+}
+/* =================================
+   NAVBAR STYLES
+   ================================= */
+.navbar {
+    background-color: #000000; /* Black background */
+    color: #ffffff; /* White text */
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left, links to right */
+    align-items: center;
+    padding: 15px 30px;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    /* Placeholder for the OXO part of the logo */
+}
+
+.logo img {
+    /* If you use an actual image for 'OXO' */
+    height: 40px; 
+    margin-right: 5px;
+}
+
+.logo span {
+    /* Style for 'ENERGY' part */
+    font-size: 0.6em; 
+    align-self: flex-end; /* Aligns 'ENERGY' text below or slightly to the side */
+    margin-bottom: -5px; /* Adjust as needed */
+}
+
+/* Navigation Links Styling (Desktop) */
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1em;
+    opacity: 0.85; /* Slight transparency for links */
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* Mobile Menu Toggle Button - Hidden on Desktop */
+.menu-toggle {
+    display: none; /* Hide on large screens */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+/* --- Responsive/Mobile Styles --- */
+/* A common breakpoint for mobile devices is 768px or less */
+@media (max-width: 768px) {
+    
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    /* Show the hamburger icon */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide links by default on mobile */
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+        background-color: #000000;
+        padding: 10px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        z-index: 10;
+    }
+
+    /* Style for links when stacked vertically */
+    .nav-links a {
+        margin: 10px 20px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Last link usually doesn't need a border */
+    .nav-links a:last-child {
+        border-bottom: none;
+    }
+
+    /* Class added by JS to show the menu */
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+/* =================================
+   HERO SECTION STYLES
+   ================================= */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 60px 8%;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .hero-left h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 20px;
+    }
+
+    .hero-left h2 {
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 1.3;
+      margin: 0 0 20px;
+      color: #cfcfcf;
+    }
+
+    .hero-left p {
+      font-size: 24px;
+      line-height: 1.4;
+      margin-bottom: 30px;
+      color: #d0d0d0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border-radius: 25px;
+      background: white;
+      color: black;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .hero-right {
+      max-width: 40%;
+      font-size: 18px;
+      color: #d0d0d0;
+      line-height: 1.6;
+    }
+
+/* =================================
+   FEATURES SECTION STYLES
+    ================================= */
+
+/* Section Styles */
+.features-section {
+    background-color: var(--color-dark-bg);
+    padding: 80px 5%;
+    font-family: sans-serif; /* Use your actual desired font */
+    color: var(--color-light-text);
+    text-align: center;
+}
+
+/* Header/Branding Area */
+.header-content {
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+.brand-identity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.bull-logo {
+    /* REVISION: Removed placeholder styles for the span itself */
+    display: flex; /* Use flex to easily center the image if needed, though img inside will handle size */
+    align-items: center; /* Vertically align image within the span */
+    justify-content: center; /* Horizontally align image within the span */
+    width: auto; /* Let the image size dictate width if not specifically set */
+    height: auto; /* Let the image size dictate height if not specifically set */
+    margin-right: 15px;
+}
+
+.bull-logo img {
+    /* Style for the actual image inside the span */
+    display: block; /* Remove any extra space that might appear below inline images */
+    width: 180px; /* Adjust size as needed, matching the previous placeholder */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it's responsive and doesn't overflow its parent */
+}
+
+
+.brand-name {
+    font-size: 3.5rem; 
+    font-weight: 900;
+    color: var(--color-main-brand);
+    margin: 0;
+    letter-spacing: -2px;
+}
+
+.section-headline {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px 0 20px;
+    color: var(--color-subtle-text);
+}
+
+.section-subtext {
+    font-size: 1.1rem;
+    color: var(--color-subtle-text);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Feature Cards Layout (Desktop) */
+.features-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    flex: 1; 
+    max-width: 280px; 
+    background-color: var(--color-card-bg);
+    border-radius: 4px;
+    padding: 30px 20px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    min-height: 150px; 
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--color-card-title);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.card-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-subtle-text);
+    margin: 0;
+}
+
+
+/* =================================
+   MEDIA QUERY FOR MOBILE RESPONSIVENESS
+   ================================= */
+@media (max-width: 992px) {
+    .features-container {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .feature-card {
+        flex: 1 1 45%; 
+        max-width: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .features-section {
+        padding: 60px 5%;
+    }
+
+    .bull-logo img {
+        width: 40px; /* Smaller logo on mobile */
+    }
+
+    .brand-name {
+        font-size: 2.5rem; 
+    }
+    
+    .section-headline {
+        font-size: 1.5rem;
+    }
+    
+    .section-subtext {
+        font-size: 0.95rem;
+    }
+
+    .features-container {
+        flex-direction: column; 
+        gap: 15px;
+    }
+    
+    .feature-card {
+        flex: 1 1 100%; 
+        min-height: auto; 
+    }
+}
+:root {
+    --color-dark-bg: #000;
+    --color-light-text: #fff;
+    --color-subtle-text: rgba(255, 255, 255, 0.8);
+}
+
+.how-it-works-section {
+    background-color: var(--color-dark-bg);
+    color: var(--color-light-text);
+    font-family: sans-serif;
+    position: relative;
+    /* Needs a large height to allow scrolling to trigger the changes */
+    height: 300vh; /* Set a large height, e.g., 300% of the viewport */
+}
+
+/* Container for the content that will stick during the scroll animation */
+.works-content-container {
+    position: sticky;
+    top: 0; /* Sticks to the top of the viewport */
+    height: 100vh; /* Takes up the full viewport height while sticking */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5%;
+    overflow: hidden;
+}
+
+/* Image container styling */
+.bull-image-container {
+    flex: 1; /* Takes up left side */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.process-bull {
+    width: 100%;
+    max-width: 500px; /* Limit the image size */
+    height: auto;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for image swaps */
+}
+
+/* Step text container styling */
+.step-text-container {
+    flex: 1; /* Takes up right side */
+    padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.step-card {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    pointer-events: none; /* Make inactive cards non-clickable */
+    transition: opacity 0.5s ease-in-out;
+    text-align: left;
+    max-width: 450px;
+}
+
+.step-card.active-step {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.step-number {
+    font-size: 8rem; /* Very large number */
+    font-weight: bold;
+    color: var(--color-light-text);
+    line-height: 1;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.step-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0 0 10px;
+    color: var(--color-light-text);
+}
+
+.step-description {
+    font-size: 1.1rem;
+    color: var(--color-subtle-text);
+    margin: 0;
+}
+
+/* Spacer is needed to create scroll room for the sticky content */
+.scroll-spacer {
+    height: 100vh; /* This height is added *after* the sticky section */
+    /* This empty space allows you to scroll away from the sticky content */
+}
+
+/* =================================
+   MEDIA QUERY FOR MOBILE RESPONSIVENESS
+   ================================= */
+@media (max-width: 768px) {
+    .works-content-container {
+        flex-direction: column; /* Stack image and text vertically */
+        height: auto; /* Allow height to adjust to content */
+        padding-top: 50px;
+    }
+    
+    .how-it-works-section {
+        /* Adjust height calculation for mobile based on new content height */
+        height: 400vh; /* May need more height if content is taller */
+    }
+
+    .bull-image-container {
+        padding-right: 0;
+        margin-bottom: 40px;
+    }
+    
+    .process-bull {
+        max-width: 300px;
+    }
+
+    .step-text-container {
+        padding-left: 0;
+        height: 200px; /* Define a fixed height for the text area on mobile */
+        justify-content: flex-start;
+    }
+    
+    .step-card {
+        top: 0; /* Align to the top of the container */
+        transform: none;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .step-number {
+        font-size: 4rem; /* Smaller number on mobile */
+    }
+    
+    .step-title {
+        font-size: 1.8rem;
+    }
+    
+    .step-description {
+        font-size: 1rem;
+    }
+}
+
+    
